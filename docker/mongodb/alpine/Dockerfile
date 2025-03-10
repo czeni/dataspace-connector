@@ -8,7 +8,8 @@ RUN mkdir -p /data/db && chown -R mongodb:mongodb /data/db
 
 VOLUME /data/db
 ENV MONGOMS_SYSTEM_BINARY=/usr/bin/mongod
+WORKDIR /data
 # Expose the default MongoDB port
 EXPOSE 27017
 # Set the default command to run when the container starts
-CMD ["mongod"]
+CMD ["mongod", "--bind_ip", "0.0.0.0"]

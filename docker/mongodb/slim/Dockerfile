@@ -10,4 +10,4 @@ RUN apt-get update && apt-get install -y gnupg curl && \
 VOLUME /data/db
 WORKDIR /data
 EXPOSE 27017
-CMD ["mongod", "--bind_ip", "127.0.0.1" ]
+CMD ["mongod", "--bind_ip", "0.0.0.0" ]
